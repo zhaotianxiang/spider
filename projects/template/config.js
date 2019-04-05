@@ -1,17 +1,35 @@
-const moment = require('moment');
+'use strict'
 
-const config = Object.freeze({
-
-	today: moment().format('YYYY-MM-DD'),
-	header: ['col1', 'col2', 'col3'],
-	// proxy: 'http://127.0.0.1',
-	
-	rateLimit: 1000,
-	debug: true,
+module.exports = Object.freeze({
+	// spider options
 	progrm: __dirname.toString().replace(/[\/\\]/g,',').split(',').pop(),
-	
+	// seed:'example.txt', 
 	seed: 'http://www.baidu.com',
-	// seed: 'example.txt',
+	proxy: null,
+	header: ['col1', 'col2', 'col3'],
+	headers:{
+		'User-Agent':'okhttp',
+		'Connection':'keep-alive',
+		'Cache-Control':'max-age=0',
+		'Accept':'*/*',
+	},
+	// crawler all options as follow
+	debug:                  true,
+	autoWindowClose:        true,
+	forceUTF8:              true,
+	gzip:                   true,
+	incomingEncoding:       null,
+	jquery:                 true,
+	maxConnections:         10,
+	method:                 'GET',
+	priority:               5,
+	priorityRange:          10,
+	rateLimit:              0,
+	referer:                false,
+	retries:                3,
+	retryTimeout:           10000,
+	timeout:                15000,
+	skipDuplicates:         false,
+	rotateUA:               false,
+	homogeneous:            false
 });
-
-module.exports = config;

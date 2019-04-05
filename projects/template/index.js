@@ -1,19 +1,22 @@
+'use strict'
+
 const Spider = require('../../lib/spider');
 const config = require('./config');
-const spider = new Spider(config);
+
+let spider = new Spider(config);
 
 spider.home = (ctx, gene) => {
 	ctx.crawler.queue({
 		uri: ctx.seed,
+		jQuery: true,
 		callback: (err, res, done) => {
-			if (err) {
-				ctx.log.error(err,res.body);
-				return done();
-			}
-			console.log(res.$('title').text().trim());
-
+			if(Spider.isHasError(ctx, err, res)) return done();
+			
+			let title = res.$('title').text().trim();
+			ctx.logger.info(title);
+			
 			spider.list(ctx, Object.assign({}, gene, {
-				homeName: res.$('title').text().trim()
+				title: title
 			}));
 		}
 	});
@@ -25,9 +28,7 @@ spider.list = (ctx, gene) => {
 }
 
 spider.detail = (ctx, gene) => {
-	spider.logger.info('detail');
+	ctx.logger.info('detail');
 }
-spider.run();
 
-// spider.run();
-// console.log(spider);
+spider.run();
