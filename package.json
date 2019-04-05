@@ -10,10 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/zhaotianxiang/spider.git"
   },
-  "author": "",
+  "author": "ztx",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zhaotianxiang/spider/issues"
   },
-  "homepage": "https://github.com/zhaotianxiang/spider#readme"
+  "homepage": "https://github.com/zhaotianxiang/spider#readme",
+  "dependencies": {
+    "crawler": "^1.2.0",
+    "moment": "^2.24.0",
+    "winston": "^3.2.1"
+  }
 }
