@@ -10,7 +10,6 @@ module.exports = Object.freeze({
 	headers:{
 		'User-Agent':'okhttp',
 		'Connection':'keep-alive',
-		'Cache-Control':'max-age=0',
 		'Accept':'*/*',
 	},
 	// crawler all options as follow

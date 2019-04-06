@@ -15,20 +15,16 @@ spider.home = (ctx, gene) => {
 			let title = res.$('title').text().trim();
 			ctx.logger.info(title);
 			
-			spider.list(ctx, Object.assign({}, gene, {
-				title: title
-			}));
+			spider.list(ctx, gene);
+
+			done();
 		}
 	});
 };
 
 spider.list = (ctx, gene) => {
-	spider.logger.info('list');
-	spider.detail(ctx, gene);
-}
-
-spider.detail = (ctx, gene) => {
-	ctx.logger.info('detail');
+	ctx.logger.info('list');
+	Spider.toCSV(ctx.resFile, ['a','b','c']);
 }
 
 spider.run();
