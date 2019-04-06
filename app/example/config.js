@@ -3,7 +3,6 @@
 module.exports = Object.freeze({
 	// spider options
 	progrm: __dirname.toString().replace(/[\/\\]/g,',').split(',').pop(),
-	// seed:'example.txt', 
 	seed: 'http://www.baidu.com',
 	proxy: null,
 	header: ['col1', 'col2', 'col3'],
@@ -12,8 +11,11 @@ module.exports = Object.freeze({
 		'Connection':'keep-alive',
 		'Accept':'*/*',
 	},
+	doneSetIndex:           0,
+	clearResultFile:        false,
+	debug:                  false,
+
 	// crawler all options as follow
-	debug:                  true,
 	autoWindowClose:        true,
 	forceUTF8:              true,
 	gzip:                   true,

@@ -10,7 +10,7 @@ spider.home = (ctx, gene) => {
 		uri: ctx.seed,
 		jQuery: true,
 		callback: (err, res, done) => {
-			if(Spider.isHasError(ctx, err, res)) return done();
+			if(ctx.isHasError(err, res)) return done();
 			
 			let title = res.$('title').text().trim();
 			ctx.logger.info(title);
@@ -23,9 +23,7 @@ spider.home = (ctx, gene) => {
 
 spider.list = (ctx, gene) => {
 	ctx.logger.info('list');
-	Spider.toCSV(ctx.resFile, ['a','b','c']);
+	ctx.toCSV(ctx.resFile, ['b','b','c']);
 }
-
-console.log(spider);
 
 spider.run();
