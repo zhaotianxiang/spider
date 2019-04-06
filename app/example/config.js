@@ -6,8 +6,8 @@ module.exports = Object.freeze({
 	seed: 'http://www.baidu.com',
 	header: ['col1', 'col2', 'col3'],
 	doneSetIndex:           0,
-	clearResultFile:        false,
-	debug:                  false,
+	clearResultFile:        true,
+	debug:                  true,
 	proxy:                  null,
 	headers:{
 		'User-Agent':'okhttp',
