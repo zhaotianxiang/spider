@@ -2,18 +2,18 @@
 
 module.exports = Object.freeze({
 	// spider options
-	progrm: __dirname.toString().replace(/[\/\\]/g,',').split(',').pop(),
-	seed: 'http://www.baidu.com',
-	header: ['col1', 'col2', 'col3'],
+	progrm:                 __dirname.toString().replace(/[\/\\]/g,',').split(',').pop(),
+	seed:                   'http://www.baidu.com',
+	header:                 ['col1', 'col2', 'col3'],
 	doneSetIndex:           0,
-	clearResultFile:        true,
-	debug:                  true,
-	// proxyFile:              'proxy_wuba.json',
-	headers:{
-		'User-Agent':'okhttp',
-		'Connection':'keep-alive',
-		'Accept':'*/*',
-	},
+	clearResultFile:        false,
+	debug:                  false,
+	proxyFile:              'proxy_wuba.json',
+	headers:                {
+								'User-Agent':'okhttp',
+								'Connection':'keep-alive',
+								'Accept':'*/*',
+							},
 
 	// crawler options
 	rateLimit:              0,
