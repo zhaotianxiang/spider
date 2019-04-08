@@ -8,7 +8,7 @@ module.exports = Object.freeze({
 	doneSetIndex:           0,
 	clearResultFile:        true,
 	debug:                  true,
-	proxy:                  null,
+	// proxyFile:              'proxy_wuba.json',
 	headers:{
 		'User-Agent':'okhttp',
 		'Connection':'keep-alive',
