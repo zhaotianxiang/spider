@@ -1,3 +1,0 @@
-seed1,a,b,c
-seed2,d,e,f
-keword,g,t,k
